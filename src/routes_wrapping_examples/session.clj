@@ -22,7 +22,8 @@
 
 
 (defn ctx-redirect
-  "Just a redirect wrapper that adds our context to the URI."
+  "Just a redirect wrapper that adds our context to the URI. This does
+  not work well behind a proxy under a different URL."
   [uri]
   (resp/redirect (format "%s%s" CTX uri)))
 
@@ -60,7 +61,7 @@
 (defn home
   "This is the area for logged in users.
 
-  In this function we explicitly ask buddy if the request is
+  In this function, we explicitly ask buddy if the request is
   authenticated to be able to show the visitor different pages.
 
   Note the 'API' call to lambda.png again which should show up for

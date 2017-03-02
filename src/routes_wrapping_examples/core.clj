@@ -33,9 +33,9 @@
   ;; This is just a static route for http://localhost:9090/
   (GET "/" [] (resp/response "Root"))
 
-  ;; This finds files locally in the "files" directory. Usually the
-  ;; built makes files under resources/public in the root of the
-  ;; project available. This example show how to override the local
+  ;; This finds files locally in the "files" directory. Usually, the
+  ;; build makes files under resources/public in the root of the
+  ;; project available. This example shows how to override the local
   ;; directory default "public" with "files" and allows to access them
   ;; via http://localhost:9090/fstatic/static.txt.  CSS files are good
   ;; examples for this kind of routing.
@@ -44,6 +44,8 @@
 
   ;; This is an example for the default static file serving. We use it
   ;; for delivering a robots.txt as http://localhost:9090/robots.txt
+  ;; You can find the robots.txt file in the resources/public folder
+  ;; in the root of this projects. That is the default for this route. 
   (route/resources "/")
   
   ;; Here, we define a context. All GET declarations inside the
@@ -67,7 +69,7 @@
 
   ;; Wrapping middleware.
   ;; Most examples on the net show you how to create your routes and
-  ;; then wrap everything into some middlewares.  But what to do, when
+  ;; then wrap everything into some middlewares.  But what to do when
   ;; you want to wrap different parts of your app into different
   ;; middlewares?  Here is an example with an API that wraps automatic
   ;; JSON body generation and a site that uses HTTP basic auth with
@@ -104,8 +106,7 @@
   ;; log in. And because that example has much more code, we put it
   ;; into its own namespace.
   ;; Go to http://localhost:9090/session/
-  (example-sess/session-context)
-  )  
+  (example-sess/session-context))
 
 ;; Serve the complete app.
 ;; run (jetty app) in your REPL

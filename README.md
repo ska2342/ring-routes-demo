@@ -1,4 +1,4 @@
-# Ring Routes Demo
+# Ring And Compojure Routes Demo
 
 Demo for some of the less common usage patterns of Clojure Ring.
 
@@ -26,10 +26,12 @@ This demo outlines some patterns for the following use-cases:
 
 ## Run the Demo
 
-This project does not have any main methods so that you could run the
-code easily.  I expect you to be familiar with your Clojure IDE.  For
-me, just opening one of the sources files and run `M-x cider-jack-in`
-in my Emacs works well.
+This project does not have any main methods that allow you to run the
+code easily.
+
+I expect you to be familiar with your Clojure IDE.  For me, just
+opening one of the sources files and run `M-x cider-jack-in` in my
+Emacs works well.
 
 Actually, this project does not have to be run at all.  It should
 serve as an inspiration for you how to organize your routes and
